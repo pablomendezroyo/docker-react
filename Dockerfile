@@ -11,5 +11,5 @@ RUN npm run build
 FROM nginx 
 EXPOSE 80 
 # EXPOSE will be found by beanstalk to expose the port
-COPY --from=builder /app/build /usr/share/nginx/html 
+COPY --from=0 /app/build /usr/share/nginx/html 
 # nginx starts automatically, it does not need a command and it uses the port 80 as the default
